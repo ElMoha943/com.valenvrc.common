@@ -1,6 +1,6 @@
 {
   "name": "com.valenvrc.public_scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A compilation of all my utility scripts for VRChat",
   "displayName": "Valenvrc - Public Scripts",
   "author": {
@@ -8,5 +8,13 @@
     "url": "https://discord.gg/6AcpahXKQu"
   },
   "unity": "2019.4",
-  "unityRelease": "31f1"
+  "unityRelease": "31f1",
+  "vpmDependencies": {
+    "com.vrchat.worlds": "^3.4"
+  },
+  "keywords": [
+    "scripts",
+    "udon",
+    "vrchat"
+  ]
 }
