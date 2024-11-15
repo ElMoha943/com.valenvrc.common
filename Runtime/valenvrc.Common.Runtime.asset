@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5136146375e9a0a498a72a0091b40cc1, type: 3}
-  m_Name: valenvrc.PublicScripts.Runtime
+  m_Name: valenvrc.Common.Runtime
   m_EditorClassIdentifier: 
   sourceAssembly: {fileID: 5897886265953266890, guid: 381a228cf0afcd1489b3c9484175fff2,
     type: 3}

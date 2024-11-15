@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
-  m_Name: PanelActivator Udon C# Program Asset
+  m_Name: OpenGroupButton Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 31d8b4f97d30375439e8285e379148ff,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 16aef37f8b535254aa222ee437ee1fb2,
     type: 2}
   udonAssembly: 
   assemblyError: 
-  sourceCsScript: {fileID: 11500000, guid: e9f7fdc3d48f1984a99b71a2ea091385, type: 3}
+  sourceCsScript: {fileID: 11500000, guid: f9a0cddd4b089ba49b14812c0bdb646b, type: 3}
   scriptVersion: 2
   compiledVersion: 2
-  behaviourSyncMode: 2
+  behaviourSyncMode: 1
   hasInteractEvent: 0
-  scriptID: -4593234782186020958
+  scriptID: 9195040676098413946
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -50,19 +50,19 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: collection
+      Data: GroupIdentifier
     - Name: $v
       Entry: 7
       Data: 2|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
     - Name: <Name>k__BackingField
       Entry: 1
-      Data: collection
+      Data: GroupIdentifier
     - Name: <UserType>k__BackingField
       Entry: 7
       Data: 3|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: UnityEngine.UI.Selectable[], UnityEngine.UI
+      Data: System.String, mscorlib
     - Name: 
       Entry: 8
       Data: 
@@ -86,13 +86,7 @@ MonoBehaviour:
       Data: 4|System.Collections.Generic.List`1[[System.Attribute, mscorlib]], mscorlib
     - Name: 
       Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 5|UnityEngine.SerializeField, UnityEngine.CoreModule
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: 0
     - Name: 
       Entry: 13
       Data: 
