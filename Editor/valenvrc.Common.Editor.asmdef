@@ -1,7 +1,9 @@
 {
     "name": "valenvrc.Common.Editor",
     "rootNamespace": "valenvrc.Common",
-    "references": [],
+    "references": [
+        "GUID:84265b35cca3905448e623ef3903f0ff"
+    ],
     "includePlatforms": [
         "Editor"
     ],

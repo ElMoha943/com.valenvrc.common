@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7ec003c3b0838d43a4dd29fa6dd365e
+guid: c1f0b0c5ca1cc6045b46bbcedfeb17f7
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Nulshock
+  - Conthrax
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

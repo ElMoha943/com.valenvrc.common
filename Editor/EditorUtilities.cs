@@ -16,6 +16,7 @@ namespace valenvrc.Common{
 
             // Calculate character width
             float charWidth = totalTextWidth / text.Length;
+            
 
             // Calculate the starting x-position to center the text
             float startX = rect.x + (rect.width - totalTextWidth) / 2;
@@ -29,6 +30,11 @@ namespace valenvrc.Common{
                 // Set the color for the current character
                 style.normal.textColor = color;
 
+                //add 1 offset if the character is a D
+                if(text[i] == 'M' || text[i] == 'm' || text[i] == 'U' || text[i] == 'u'){
+                    startX += 1.5f;
+                }
+
                 // Calculate the position of the character
                 Rect charRect = new Rect(startX + i * charWidth, rect.y, charWidth, rect.height);
 
@@ -36,6 +42,10 @@ namespace valenvrc.Common{
                 GUI.Label(charRect, text[i].ToString(), style);
             }
         }
+
+        
+
+
     }
 }
 
