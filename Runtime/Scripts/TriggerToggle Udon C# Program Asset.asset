@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: TriggerToggle Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: e72cb627b406cc6489033d971cffbd0e,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 731c0ec06b5358a43b02754c6b7af738,
     type: 2}
   udonAssembly: 
   assemblyError: 
