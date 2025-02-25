@@ -6,11 +6,15 @@ namespace valenvrc.Common{
     [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class Invoke : UdonSharpBehaviour
     {
-        [SerializeField] string methodName;
-        [SerializeField] UdonBehaviour target;
+        [SerializeField] string[] methodNames = new string[1];
+        [SerializeField] UdonBehaviour[] targets = new UdonBehaviour[1];
 
         public override void Interact(){
-            target.SendCustomEvent(methodName);
+            for (int i = 0; i < targets.Length; i++){
+                if (targets[i] != null && !string.IsNullOrEmpty(methodNames[i])){
+                    targets[i].SendCustomEvent(methodNames[i]);
+                }
+            }
         }
     }
 }

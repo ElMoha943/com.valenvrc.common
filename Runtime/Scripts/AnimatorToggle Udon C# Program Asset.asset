@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: AnimatorToggle Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 44811b3f51f669a4b8720520eab396c6,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 2ebfd9070962fa14b9bf49bfc7b11f8b,
     type: 2}
   udonAssembly: 
   assemblyError: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: PickUpInvoke  Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 968ff8dd0031241478f4d7fcc359e356,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: eb50a6ace2c7b224fb71b335cbb2c1d5,
     type: 2}
   udonAssembly: 
   assemblyError: 

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 using VRC.SDK3.Components;
-using VRC.SDKBase;
 
 //Context Menu for Object Pool
 //When right clicking on the Object Pool in the hierarchy, the followin options appear
