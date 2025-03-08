@@ -8,20 +8,17 @@ namespace valenvrc.Common{
     {
         [SerializeField] Animator anim;
         [SerializeField] string parameterName;
+        [SerializeField] bool toggleOnEnter = true;
 
-        public override void OnPlayerTriggerEnter(VRCPlayerApi player)
-        {
-            if(player.isLocal)
-            {
-                anim.SetBool(parameterName, true);
+        public override void OnPlayerTriggerEnter(VRCPlayerApi player){
+            if(player.isLocal){
+                anim.SetBool(parameterName, toggleOnEnter);
             }
         }
         
-        public override void OnPlayerTriggerExit(VRCPlayerApi player)
-        {
-            if(player.isLocal)
-            {
-                anim.SetBool(parameterName, false);
+        public override void OnPlayerTriggerExit(VRCPlayerApi player){
+            if(player.isLocal){
+                anim.SetBool(parameterName, !toggleOnEnter);
             }
         }
     }

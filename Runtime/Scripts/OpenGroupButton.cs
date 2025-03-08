@@ -5,8 +5,10 @@ using UnityEngine;
 namespace valenvrc.Common{
     [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync), HelpURL("https://discord.gg/nv5ax3wDqc"), Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg")]
     public class OpenGroupButton : UdonSharpBehaviour{
-        public string GroupIdentifier;
-        public void OpenGroupPages(){
+
+        [SerializeField] string GroupIdentifier;
+
+        public void _OpenGroupPage(){
             Store.OpenGroupPage(GroupIdentifier);
         }
     }

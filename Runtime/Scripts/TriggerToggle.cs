@@ -8,23 +8,17 @@ namespace valenvrc.Common{
     {
         [SerializeField] GameObject[] toggleableObjects;
 
-        public override void OnPlayerTriggerEnter(VRCPlayerApi player)
-        {
-            if (player.isLocal)
-            {
-                foreach (GameObject obj in toggleableObjects)
-                {
+        public override void OnPlayerTriggerEnter(VRCPlayerApi player){
+            if (player.isLocal){
+                foreach (GameObject obj in toggleableObjects){
                     obj.SetActive(!obj.activeSelf);
                 }
             }
         }
 
-        public override void OnPlayerTriggerExit(VRCPlayerApi player)
-        {
-            if (player.isLocal)
-            {
-                foreach (GameObject obj in toggleableObjects)
-                {
+        public override void OnPlayerTriggerExit(VRCPlayerApi player){
+            if (player.isLocal){
+                foreach (GameObject obj in toggleableObjects){
                     obj.SetActive(!obj.activeSelf);
                 }
             }

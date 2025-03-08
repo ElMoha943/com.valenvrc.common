@@ -6,13 +6,15 @@ namespace valenvrc.Common{
     [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class ButtonCooldown : UdonSharpBehaviour
     {
-        void setCooldown(){
+        [SerializeField] float cooldown = 2;
+
+        public void _setCooldown(){
             Selectable i = GetComponent<Selectable>();
             i.interactable = false;
-            SendCustomEventDelayedSeconds("resetCooldown", 2);
+            SendCustomEventDelayedSeconds("_resetCooldown", cooldown);
         }
 
-        void resetCooldown(){
+        public void _resetCooldown(){
             Selectable i = GetComponent<Selectable>();
             i.interactable = true;
         }

@@ -2,19 +2,12 @@ using UnityEngine;
 using UnityEditor;
 using VRC.SDK3.Components;
 
-//Context Menu for Object Pool
-//When right clicking on the Object Pool in the hierarchy, the followin options appear
-//1. Fill Object pool with all the childs of the gameobject
 [CustomEditor(typeof(VRCObjectPool), true)]
 public class ObjectPoolUtility : Editor
 {
-    public override void OnInspectorGUI()
-    {
-        // Draw default inspector UI
+    public override void OnInspectorGUI(){
         DrawDefaultInspector();
-        // Add a button to the inspector
-        if (GUILayout.Button("Fill Object Pool With All Childs"))
-        {
+        if (GUILayout.Button("Fill Object Pool With All Childs")){
             FillObjectPoolWithAllChilds();
         }
     }
@@ -22,7 +15,6 @@ public class ObjectPoolUtility : Editor
     [ContextMenu("Fill Object Pool With All Childs")]
     void FillObjectPoolWithAllChilds(){
 
-        // Obtén el GameObject en el cual está ligado este script
         VRCObjectPool myComponent = (VRCObjectPool)target;
         GameObject go = myComponent.gameObject;
 
