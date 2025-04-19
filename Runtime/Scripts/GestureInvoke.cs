@@ -68,6 +68,7 @@ namespace valenvrc.Common{
             if(!vrMode) return;
             //check for input
             if(value > 0.5){
+                if(RequireTriggerPressed && !triggerPrimed) return;
                 if(gestureType == GestureType.RightJoyStickUpSeconds){
                     primed = true;
                 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: PickUpResetZone Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: f719ca1183d7fd647ab3f9f36148fe06,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 69066b3687a1f2142bef3513f310c688,
     type: 2}
   udonAssembly: 
   assemblyError: 

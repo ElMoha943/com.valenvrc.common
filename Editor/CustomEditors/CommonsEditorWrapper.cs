@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace valenvrc.Common
+namespace valenvrc.Common.Editor.Custom
 {
     [CustomEditor(typeof(GestureInvoke))]
     public class GestureEditorWrapper : GestureEditor{

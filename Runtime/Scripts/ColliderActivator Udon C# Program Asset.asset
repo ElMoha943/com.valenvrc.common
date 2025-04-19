@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: ColliderActivator Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d9189240d2e79a045b56cd732bd6f893,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 7970d55fb5c46dd47b76e93191e81520,
     type: 2}
   udonAssembly: 
   assemblyError: 
