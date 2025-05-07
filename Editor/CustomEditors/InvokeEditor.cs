@@ -4,6 +4,7 @@ using UnityEditorInternal;
 
 namespace valenvrc.Common.Editor.Custom
 {
+    [CustomEditor(typeof(Invoke))]
     public class InvokeEditor : UnityEditor.Editor
     {
 
@@ -16,7 +17,7 @@ namespace valenvrc.Common.Editor.Custom
             methodNameProperty = serializedObject.FindProperty("methodNames");
             targetsProperty = serializedObject.FindProperty("targets");
 
-            reorderableList = Editor.Utilities.EditorUtilities.CreateReorderableList(
+            reorderableList = Utilities.EditorUtilities.CreateReorderableList(
                 serializedObject,
                 targetsProperty,
                 methodNameProperty,

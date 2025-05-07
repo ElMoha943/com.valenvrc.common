@@ -3,6 +3,7 @@ using UnityEditor;
 
 namespace valenvrc.Common.Editor.Custom
 {
+    [CustomEditor(typeof(GestureInvoke))]
     public class GestureEditor : UnityEditor.Editor
     {
         SerializedObject serializedObj;

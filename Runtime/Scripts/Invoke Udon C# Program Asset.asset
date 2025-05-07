@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: Invoke Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 075f9d7f2713522459c188e75f21443d,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: e8955a3bcf1dcb3499cde241981ab613, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 5c1f28c439024d7408fbc83b2bfb738f, type: 3}
   scriptVersion: 2
   compiledVersion: 2
-  behaviourSyncMode: 2
+  behaviourSyncMode: 1
   hasInteractEvent: 1
   scriptID: 6417179910308240725
   serializationData:

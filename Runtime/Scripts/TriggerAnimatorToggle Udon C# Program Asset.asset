@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: TriggerAnimatorToggle Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 31646942d75ac3f4e9a8b9189cc42737,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: ea08b42ac44c90044babf02830c275ac, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: d3398c1cb5d2b81429c38c270189955f, type: 3}
   scriptVersion: 2
   compiledVersion: 2
-  behaviourSyncMode: 2
+  behaviourSyncMode: 1
   hasInteractEvent: 0
   scriptID: 1743286617344858061
   serializationData:

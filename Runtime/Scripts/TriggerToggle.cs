@@ -3,7 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class TriggerToggle : UdonSharpBehaviour
     {
         [SerializeField] GameObject[] toggleableObjects;

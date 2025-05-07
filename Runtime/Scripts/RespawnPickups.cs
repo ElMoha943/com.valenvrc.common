@@ -4,7 +4,7 @@ using VRC.SDK3.Components;
 using VRC.SDKBase;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class RespawnPickups : UdonSharpBehaviour
     {
         [SerializeField] VRCObjectSync[] objects;

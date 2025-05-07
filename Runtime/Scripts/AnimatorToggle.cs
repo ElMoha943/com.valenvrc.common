@@ -2,18 +2,18 @@
 using UnityEngine;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class AnimatorToggle : UdonSharpBehaviour
     {
         [SerializeField] Animator anim;
         [SerializeField] string parameterName;
 
         void OnEnable(){
-            anim.SetBool(parameterName, true);
+            if(anim != null) anim.SetBool(parameterName, true);
         }
 
         void OnDisable(){
-            anim.SetBool(parameterName, false);
+            if(anim != null) anim.SetBool(parameterName, false);
         }
     }
 }

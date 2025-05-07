@@ -2,15 +2,34 @@
 using UdonSharp;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class LocalObjectRespawn : UdonSharpBehaviour
     {
         [SerializeField] GameObject objectToRespawn;
-        [SerializeField] GameObject respawnPoint;
+        [SerializeField,Tooltip("Where to respawn the object, if null default position will be used")] Transform respawnPoint;
+
+        Vector3 respawnPosition;
+        Quaternion respawnRotation;
+
+        void Start(){
+            if (objectToRespawn == null){
+                Debug.LogError("Object to respawn is not assigned.", this);
+                gameObject.SetActive(false);
+                return;
+            }
+            if (respawnPoint == null){
+                respawnPosition = objectToRespawn.transform.position;
+                respawnRotation = objectToRespawn.transform.rotation;
+            }
+            else{
+                respawnPosition = respawnPoint.position;
+                respawnRotation = respawnPoint.rotation;
+            }
+        }
 
         public override void Interact(){
-            objectToRespawn.transform.position = respawnPoint.transform.position;
-            objectToRespawn.transform.rotation = respawnPoint.transform.rotation;
+            objectToRespawn.transform.position = respawnPosition;
+            objectToRespawn.transform.rotation = respawnRotation;
         }
     }
 }

@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: OpenGroupButton Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d053fd5e8026b4a4d8fe21e7a97fab56,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 1994a4e65d93bf34cb0575aa04080a43, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: f9a0cddd4b089ba49b14812c0bdb646b, type: 3}
   scriptVersion: 2
   compiledVersion: 2
-  behaviourSyncMode: 2
+  behaviourSyncMode: 1
   hasInteractEvent: 0
   scriptID: 9195040676098413946
   serializationData:

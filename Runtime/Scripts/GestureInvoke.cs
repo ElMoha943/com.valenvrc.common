@@ -1,12 +1,10 @@
-﻿using System;
-using TMPro;
-using UdonSharp;
+﻿using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon.Common;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync),Icon("Packages/com.valenvrc.common/Runtime/PromotionalImages/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
     public class GestureInvoke : UdonSharpBehaviour
     {
         [SerializeField] bool RequireTriggerPressed = true;
@@ -18,6 +16,7 @@ namespace valenvrc.Common{
 
         [SerializeField] float times;
         [SerializeField] float gracePeriod = 0.5f;
+        [SerializeField] float stickThreshold = 0.5f;
 
         [SerializeField] GameObject targetObject;
         [SerializeField] GameObject tpoint;
@@ -67,7 +66,7 @@ namespace valenvrc.Common{
         public override void InputLookVertical(float value, UdonInputEventArgs args){
             if(!vrMode) return;
             //check for input
-            if(value > 0.5){
+            if(value > stickThreshold){
                 if(RequireTriggerPressed && !triggerPrimed) return;
                 if(gestureType == GestureType.RightJoyStickUpSeconds){
                     primed = true;
@@ -85,7 +84,7 @@ namespace valenvrc.Common{
                     primed = false;
                 }
             }
-            else if(value < -0.5){
+            else if(value < -stickThreshold){
                 if(RequireTriggerPressed && !triggerPrimed) return;
                 if(gestureType == GestureType.RightJoyStickDownSeconds){
                     primed = true;
