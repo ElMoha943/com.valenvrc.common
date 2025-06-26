@@ -8,7 +8,7 @@ namespace valenvrc.Common{
     {
         [SerializeField] Animator anim;
         [SerializeField] string parameterName;
-        [SerializeField] bool toggleOnEnter = true;
+        [SerializeField] bool workForAllPlayers = false;
 
         int hash;
 
@@ -25,14 +25,14 @@ namespace valenvrc.Common{
         }
 
         public override void OnPlayerTriggerEnter(VRCPlayerApi player){
-            if(player.isLocal){
-                anim.SetBool(hash, toggleOnEnter);
+            if(player.isLocal || workForAllPlayers){
+                anim.SetBool(hash, true);
             }
         }
         
         public override void OnPlayerTriggerExit(VRCPlayerApi player){
-            if(player.isLocal){
-                anim.SetBool(hash, !toggleOnEnter);
+            if(player.isLocal || workForAllPlayers){
+                anim.SetBool(hash, false);
             }
         }
     }
