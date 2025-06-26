@@ -31,7 +31,7 @@ namespace valenvrc.Common
             return newList;
         }
 
-        public static T[] RemoveFromList<T>(T[] list, T item, out string result){
+        public static T[] RemoveFromList<T>(T[] list, T item, out string result, bool shrink = false){
             //Find the item
             int index = Array.IndexOf(list, item);
             if (index == -1){
@@ -39,10 +39,22 @@ namespace valenvrc.Common
                 return list;
             }
 
-            //Remove the item by setting it to default
-            list[index] = default(T);
-            result = "Item removed";
-            return list;
+            //If shrink is true, we will remove the item and shrink the array
+            if (shrink)
+            {
+                var newList = new T[list.Length - 1];
+                Array.Copy(list, 0, newList, 0, index);
+                Array.Copy(list, index + 1, newList, index, list.Length - index - 1);
+                result = "Item removed and list shrunk";
+                return newList;
+            }
+            else
+            {
+                //Remove the item by setting it to default
+                list[index] = default(T);
+                result = "Item removed";
+                return list;
+            }
         }
 
         public static string[] SanitizeStringArray(string[] input, bool trimWhitespace = true)
