@@ -9,7 +9,7 @@ namespace valenvrc.Common{
         [SerializeField] string parameterName;
         int hash;
 
-        void Awake(){
+        void Start(){
             if (anim == null){
                 Debug.LogError("AnimatorToggle: Animator component not found on " + gameObject.name);
                 return;
