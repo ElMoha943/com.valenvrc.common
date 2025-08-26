@@ -57,10 +57,18 @@ namespace valenvrc.Common.Editor.Utilities
             string secondTooltip = "", 
             string header = "Reorderable List")
         {
+            // Return null if any required property is null
+            if (serializedObject == null || firstProperty == null || secondProperty == null)
+                return null;
+
             ReorderableList list = new ReorderableList(serializedObject, firstProperty, true, true, true, true);
 
             list.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) =>
             {
+                // Safety check for array bounds
+                if (index >= firstProperty.arraySize || index >= secondProperty.arraySize)
+                    return;
+
                 float fieldWidth = rect.width / 2 - 10;
                 float padding = 5;
 
@@ -82,10 +90,11 @@ namespace valenvrc.Common.Editor.Utilities
             list.onRemoveCallback = (ReorderableList list) =>
             {
                 int index = list.index;
-                if (index >= 0)
+                if (index >= 0 && index < firstProperty.arraySize && index < secondProperty.arraySize)
                 {
                     firstProperty.DeleteArrayElementAtIndex(index);
-                    secondProperty.DeleteArrayElementAtIndex(index);
+                    if (index < secondProperty.arraySize) // Check again after first deletion
+                        secondProperty.DeleteArrayElementAtIndex(index);
                 }
             };
 
@@ -97,7 +106,8 @@ namespace valenvrc.Common.Editor.Utilities
 
             list.onReorderCallbackWithDetails = (ReorderableList list, int oldIndex, int newIndex) =>
             {
-                secondProperty.MoveArrayElement(oldIndex, newIndex);
+                if (oldIndex >= 0 && oldIndex < secondProperty.arraySize && newIndex >= 0 && newIndex < secondProperty.arraySize)
+                    secondProperty.MoveArrayElement(oldIndex, newIndex);
             };
 
             return list;

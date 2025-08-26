@@ -1,6 +1,6 @@
 {
   "name": "com.valenvrc.common",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "A compilation of all my utility scripts for VRChat. Mostly are dependences for my other assets.",
   "displayName": "Valenvrc - Common",
   "author": {
@@ -23,6 +23,7 @@
     "LicenseCryptoUtility.cs": "9e3c662c71d7fb74db9ba299b9febef2",
     "LicensedEditorFrame.cs": "5d848ec5882a5c949acc80fdc4e519ed"
   },
+  "hideInEditor": false,
   "keywords": [
     "scripts",
     "udon",

@@ -6,17 +6,31 @@ namespace valenvrc.Common
 {
     public class ArrayHelper : UdonSharpBehaviour
     {
+        /// <summary>
+        /// Adds an item to an array, expanding the array if necessary.
+        /// </summary>
+        /// /// <typeparam name="T">Type of the items in the array</typeparam>
+        /// <param name="list">The original array</param>
+        /// <param name="item">The item to add</param>
+        /// <param name="result">Output message indicating the result of the operation</param>
+        /// <returns>A new array with the item added, or the original array if the item already exists</returns>
+        /// <remarks>
+        /// If the item already exists in the array, it will not be added again.
+        /// </remarks>
         public static T[] AddToList<T>(T[] list, T item, out string result)
         {
             //Check for duplicates
-            if (Array.IndexOf(list, item) != -1){
+            if (Array.IndexOf(list, item) != -1)
+            {
                 result = "Item already exists";
                 return list;
             }
 
             // Check for an empty slot
-            for (int i = 0; i < list.Length; i++){
-                if (object.Equals(list[i], default(T))){
+            for (int i = 0; i < list.Length; i++)
+            {
+                if (object.Equals(list[i], default(T)))
+                {
                     list[i] = item;
                     result = "Item added to existing slot";
                     return list;
@@ -31,10 +45,33 @@ namespace valenvrc.Common
             return newList;
         }
 
-        public static T[] RemoveFromList<T>(T[] list, T item, out string result, bool shrink = false){
+        /// <summary>
+        /// Checks if an item exists in an array.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="item"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static bool Contains<T>(T[] array, T item)
+        {
+            return Array.IndexOf(array, item) != -1;
+        }
+
+        /// <summary>
+        /// Removes an item from an array, optionally shrinking the array.
+        /// </summary>
+        /// <typeparam name="T">Type of the items in the array</typeparam>
+        /// <param name="list">The original array</param>
+        /// <param name="item">The item to remove</param>
+        /// <param name="result">Output message indicating the result of the operation</param>
+        /// <param name="shrink">If true, the array will be shrunk after removing the item</param>
+        /// <returns>A new array with the item removed, or the original array if the item was not found</returns>
+        public static T[] RemoveFromList<T>(T[] list, T item, out string result, bool shrink = false)
+        {
             //Find the item
             int index = Array.IndexOf(list, item);
-            if (index == -1){
+            if (index == -1)
+            {
                 result = "Item not found";
                 return list;
             }

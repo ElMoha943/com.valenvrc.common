@@ -1,5 +1,6 @@
 ﻿using UdonSharp;
 using UnityEngine;
+using UnityEngine.UI;
 using VRC.SDKBase;
 using VRC.Udon.Common;
 
@@ -21,6 +22,8 @@ namespace valenvrc.Common{
         [SerializeField] GameObject targetObject;
         [SerializeField] GameObject tpoint;
 
+        [SerializeField, Tooltip("Optional, a slider to show progress until gesture is triggered.")] Slider progressSlider;
+
         VRCPlayerApi localPlayer;
         float avatarHeight = 1.6f;
         bool vrMode = false;
@@ -31,24 +34,31 @@ namespace valenvrc.Common{
         
         bool antiRebote = false;
         float nextReset = 0.0f;
-    
-        void Start(){
+
+        void Start()
+        {
             localPlayer = Networking.LocalPlayer;
             vrMode = localPlayer.IsUserInVR();
+            
         }
 
-        void Update(){
-            switch(gestureType){
+        void Update()
+        {
+            switch (gestureType)
+            {
                 case GestureType.KeyPress:
-                    if(Input.GetKeyDown(RespawnKey)){
+                    if (Input.GetKeyDown(RespawnKey))
+                    {
                         _ExecuteActions();
                     }
                     break;
                 case GestureType.RightJoyStickUpSeconds:
                 case GestureType.RightJoyStickDownSeconds:
-                    if(primed){
+                    if (primed)
+                    {
                         time += Time.deltaTime;
-                        if(time >= times){
+                        if (time >= times)
+                        {
                             _ExecuteActions();
                             time = 0;
                         }
@@ -56,10 +66,16 @@ namespace valenvrc.Common{
                     break;
                 case GestureType.RightJoyStickUpTimes:
                 case GestureType.RightJoyStickDownTimes:
-                    if(Time.time >= nextReset){
+                    if (Time.time >= nextReset)
+                    {
                         time = 0;
                     }
                     break;
+            }
+            if (progressSlider)
+            {
+                progressSlider.value = time / times;
+                progressSlider.gameObject.SetActive(progressSlider.value > 0);
             }
         }
 

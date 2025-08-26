@@ -15,6 +15,7 @@ namespace valenvrc.Common.Editor.Custom
         SerializedProperty RespawnKeyProperty;
         SerializedProperty timesProperty;
         SerializedProperty gracePeriodProperty;
+        SerializedProperty progressSlider;
 
         SerializedProperty targetObjectProperty;
         SerializedProperty tpointProperty;
@@ -30,6 +31,7 @@ namespace valenvrc.Common.Editor.Custom
             RespawnKeyProperty = serializedObj.FindProperty("RespawnKey");
             timesProperty = serializedObj.FindProperty("times");
             gracePeriodProperty = serializedObj.FindProperty("gracePeriod");
+            progressSlider = serializedObj.FindProperty("progressSlider");
 
             targetObjectProperty = serializedObj.FindProperty("targetObject");
             tpointProperty = serializedObj.FindProperty("tpoint");
@@ -68,6 +70,8 @@ namespace valenvrc.Common.Editor.Custom
             if(targetPositionProperty.enumValueIndex == 3 || gestureActionProperty.enumValueIndex == 2){ // Custom Position or Teleport Self
                 EditorGUILayout.PropertyField(tpointProperty);
             }
+
+            EditorGUILayout.PropertyField(progressSlider);
 
             serializedObj.ApplyModifiedProperties();
         }
