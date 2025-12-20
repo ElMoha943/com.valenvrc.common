@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: AnimatorActivator Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 52377b57bba67ad4a883a3b8a4c757cb, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 97bab6c07ad07cd4ca8c788ea2aa110d,
+    type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 355ba1be930d9b44bbb84783d2d02531, type: 3}

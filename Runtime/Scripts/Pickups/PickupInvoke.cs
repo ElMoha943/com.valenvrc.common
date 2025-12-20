@@ -8,7 +8,7 @@ namespace valenvrc.Common{
     {
         [SerializeField] string methodName;
         [SerializeField] UdonBehaviour target;
-        
+
         public override void OnPickupUseDown(){
             target.SendCustomEvent(methodName);
         }

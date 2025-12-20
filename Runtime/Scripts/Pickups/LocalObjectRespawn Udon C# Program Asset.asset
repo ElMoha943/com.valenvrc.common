@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: LocalObjectRespawn Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: d87ddf26ab322414c98127f9f2c4fb01, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 7c308c068796c12498f0e54709c6694c,
+    type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: ec9a048d1284be54d8ef980f10c272b8, type: 3}

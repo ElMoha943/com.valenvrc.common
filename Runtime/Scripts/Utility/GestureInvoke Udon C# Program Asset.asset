@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: GestureInvoke Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: cc6b5fc85e69f1640aa8c5a014c64db3, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: ef6f48664275e6e4190d2914f15b0f0a,
+    type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 5c8914d9b37951f4a9c9906ca85769ba, type: 3}
