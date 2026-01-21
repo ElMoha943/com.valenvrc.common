@@ -19,6 +19,11 @@ namespace valenvrc.Common
         /// </remarks>
         public static T[] AddToList<T>(T[] list, T item, out string result)
         {
+            if (list == null)
+            {
+                list = new T[0];
+            }
+
             //Check for duplicates
             if (Array.IndexOf(list, item) != -1)
             {
@@ -54,7 +59,7 @@ namespace valenvrc.Common
         /// <returns></returns>
         public static bool Contains<T>(T[] array, T item)
         {
-            return Array.IndexOf(array, item) != -1;
+            return array != null && Array.IndexOf(array, item) != -1;
         }
 
         /// <summary>
@@ -68,6 +73,12 @@ namespace valenvrc.Common
         /// <returns>A new array with the item removed, or the original array if the item was not found</returns>
         public static T[] RemoveFromList<T>(T[] list, T item, out string result, bool shrink = false)
         {
+            if (list == null)
+            {
+                result = "List is null";
+                return new T[0];
+            }
+
             //Find the item
             int index = Array.IndexOf(list, item);
             if (index == -1)
