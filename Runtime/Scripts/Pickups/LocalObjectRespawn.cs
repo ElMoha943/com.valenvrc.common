@@ -28,6 +28,10 @@ namespace valenvrc.Common{
         }
 
         public override void Interact(){
+            _Respawn();
+        }
+
+        public void _Respawn(){
             objectToRespawn.transform.position = respawnPosition;
             objectToRespawn.transform.rotation = respawnRotation;
         }
