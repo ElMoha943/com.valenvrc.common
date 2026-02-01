@@ -5,7 +5,7 @@ using VRC.SDKBase;
 
 namespace valenvrc.Common
 {
-    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.Manual), Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.png"), HelpURL("https://docs.valenvrc.com/valencommons/animation#syncedanimatortoggle")]
     public class SyncedAnimatorToggle : UdonSharpBehaviour
     {
         [SerializeField] Animator anim;

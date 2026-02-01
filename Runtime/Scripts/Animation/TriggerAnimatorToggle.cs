@@ -3,7 +3,7 @@ using UnityEngine;
 using VRC.SDKBase;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.png"), HelpURL("https://docs.valenvrc.com/valencommons/animation#triggeranimatortoggle")]
     public class TriggerAnimatorToggle : UdonSharpBehaviour
     {
         [SerializeField] Animator anim;

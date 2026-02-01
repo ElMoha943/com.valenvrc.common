@@ -4,7 +4,7 @@ using VRC.SDK3.Components;
 using VRC.SDKBase;
 
 [RequireComponent(typeof(BoxCollider))]
-[UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+[UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.png"), HelpURL("https://docs.valenvrc.com/valencommons/pickups#pickupresetzone")]
 public class PickUpResetZone : UdonSharpBehaviour
 {
     [SerializeField,Tooltip("If not empty, only the objects in this list will be respawned upon leaving the trigger area.")]

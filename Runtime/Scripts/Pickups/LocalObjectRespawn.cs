@@ -2,7 +2,7 @@
 using UdonSharp;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.png"), HelpURL("https://docs.valenvrc.com/valencommons/pickups#localobjectrespawn")]
     public class LocalObjectRespawn : UdonSharpBehaviour
     {
         [SerializeField] GameObject objectToRespawn;

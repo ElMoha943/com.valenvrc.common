@@ -3,7 +3,7 @@ using UnityEngine;
 using VRC.Udon;
 
 namespace valenvrc.Common{
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None),Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.png"), HelpURL("https://docs.valenvrc.com/valencommons/utility#invoke")]
     public class Invoke : UdonSharpBehaviour
     {
         [SerializeField] string[] methodNames = new string[1];

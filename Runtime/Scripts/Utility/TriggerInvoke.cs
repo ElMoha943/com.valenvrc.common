@@ -7,7 +7,7 @@ using VRC.Udon;
 namespace valenvrc.Common
 {
     [RequireComponent(typeof(Collider))]
-    [UdonBehaviourSyncMode(BehaviourSyncMode.None), Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.jpg"), HelpURL("https://discord.gg/nv5ax3wDqc")]
+    [UdonBehaviourSyncMode(BehaviourSyncMode.None), Icon("Packages/com.valenvrc.common/Editor/Resources/ValenFace.png"), HelpURL("https://docs.valenvrc.com/valencommons/utility#triggerinvoke")]
     public class TriggerInvoke : UdonSharpBehaviour
     {
         [SerializeField] string[] methodNames = new string[1];
