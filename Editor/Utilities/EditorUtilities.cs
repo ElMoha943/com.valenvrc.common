@@ -112,6 +112,19 @@ namespace valenvrc.Common.Editor.Utilities
 
             return list;
         }
+
+        public static void DrawDefaultInspector(SerializedObject serializedObject)
+        {
+            SerializedProperty iterator = serializedObject.GetIterator();
+            bool enterChildren = true;
+            while (iterator.NextVisible(enterChildren))
+            {
+                if (iterator.name == "m_Script" || iterator.name == "m_EditorData")
+                    continue;
+                EditorGUILayout.PropertyField(iterator, true);
+                enterChildren = false;
+            }
+        }
     }
 
 }
