@@ -36,9 +36,9 @@ jobs:
       - name: Create release archive
         run: |
           # Create zip excluding .github directory
-          zip -r "valenvrc.common-v${{ steps.package_version.outputs.version }}.zip" . -x ".github/*" ".git/*"
+          zip -r "valenvrc.common.zip" . -x ".github/*" ".git/*"
           
-          echo "Archive created: valenvrc.common-v${{ steps.package_version.outputs.version }}.zip"
+          echo "Archive created: valenvrc.common.zip"
       
       - name: Check if tag exists
         id: check_tag
@@ -57,20 +57,21 @@ jobs:
           name: valenvrc.Common v${{ steps.package_version.outputs.version }}
           draft: false
           prerelease: ${{ steps.package_version.outputs.prerelease }}
-          files: valenvrc.common-v${{ steps.package_version.outputs.version }}.zip
+          files: valenvrc.common.zip
           body: |
             ## valenvrc.Common v${{ steps.package_version.outputs.version }}
             
             A compilation of utility scripts for VRChat. Mostly dependencies for other valenvrc assets.
             
             ### Installation
+            Recommended install via VCC/ALCOM visiting https://valenvrc.com.
+
+            OR:
             1. Download the `.zip` file below
-            2. Extract to your Unity project
-            
-            Or install via VRChat Creator Companion using VPM.
+            2. Extract to your Unity project package folder.
             
             ### Support
-            Discord: https://discord.gg/6AcpahXKQu
+            Discord: https://valenvrc.com/discord
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
