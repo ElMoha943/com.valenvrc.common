@@ -1,82 +1,26 @@
-name: Create Release
+name: Publish Package
 
 on:
   push:
     branches:
       - main
-      - master
   workflow_dispatch:
 
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Read version from package.json
-        id: package_version
-        run: |
-          VERSION=$(jq -r '.version' package.json)
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "Version: $VERSION"
-          
-          # Check if version contains beta, alpha, rc, or pre
-          if [[ "$VERSION" =~ (beta|alpha|rc|pre) ]]; then
-            echo "prerelease=true" >> $GITHUB_OUTPUT
-            echo "This is a pre-release version"
-          else
-            echo "prerelease=false" >> $GITHUB_OUTPUT
-            echo "This is a stable release"
-          fi
-      
-      - name: Create release archive
-        run: |
-          # Create zip excluding .github directory
-          zip -r "valenvrc.common.zip" . -x ".github/*" ".git/*"
-          
-          echo "Archive created: valenvrc.common.zip"
-      
-      - name: Check if tag exists
-        id: check_tag
-        run: |
-          if git rev-parse "v${{ steps.package_version.outputs.version }}" >/dev/null 2>&1; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-          else
-            echo "exists=false" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Create Release
-        if: steps.check_tag.outputs.exists == 'false'
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v${{ steps.package_version.outputs.version }}
-          name: valenvrc.Common v${{ steps.package_version.outputs.version }}
-          draft: false
-          prerelease: ${{ steps.package_version.outputs.prerelease }}
-          files: valenvrc.common.zip
-          body: |
-            ## valenvrc.Common v${{ steps.package_version.outputs.version }}
-            
-            A compilation of utility scripts for VRChat. Mostly dependencies for other valenvrc assets.
-            
-            ### Installation
-            Recommended install via VCC/ALCOM visiting https://valenvrc.com.
+permissions:
+  contents: write
 
-            OR:
-            1. Download the `.zip` file below
-            2. Extract to your Unity project package folder.
-            
-            ### Support
-            Discord: https://valenvrc.com/discord
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Tag already exists
-        if: steps.check_tag.outputs.exists == 'true'
-        run: |
-          echo "⚠️ Tag v${{ steps.package_version.outputs.version }} already exists. Skipping release creation."
-          echo "To create a new release, update the version in package.json"
+jobs:
+
+  publish:
+    uses: ElMoha943/github-workflows/.github/workflows/release-package.yml@master
+
+  update-listing:
+    needs: publish
+
+    uses: ElMoha943/github-workflows/.github/workflows/update-package-listing.yml@master
+
+    with:
+      version: ${{ needs.publish.outputs.version }}
+
+    secrets:
+      LISTING_TOKEN: ${{ secrets.LISTING_TOKEN }}
