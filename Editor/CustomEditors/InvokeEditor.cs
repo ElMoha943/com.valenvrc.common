@@ -1,6 +1,6 @@
 using UdonSharpEditor;
 using UnityEditor;
-using UnityEditorInternal;
+using valenvrc.Common.Editor.Utilities;
 
 namespace valenvrc.Common.Editor.Custom
 {
@@ -11,30 +11,40 @@ namespace valenvrc.Common.Editor.Custom
         SerializedProperty methodNameProperty;
         SerializedProperty targetsProperty;
 
-        private ReorderableList reorderableList;
+        private CollapsibleReorderableList reorderableList;
 
-        private void OnEnable(){
+        private void TryBuildList()
+        {
             methodNameProperty = serializedObject.FindProperty("methodNames");
             targetsProperty = serializedObject.FindProperty("targets");
 
+            if (methodNameProperty == null || targetsProperty == null)
+                return;
+
+            Utilities.EditorUtilities.ReorderableListColumn[] columns = new Utilities.EditorUtilities.ReorderableListColumn[2];
+            columns[0] = new Utilities.EditorUtilities.ReorderableListColumn(targetsProperty, "Target:", "The target object");
+            columns[1] = new Utilities.EditorUtilities.ReorderableListColumn(methodNameProperty, "Method:", "The method name to invoke");
+
             reorderableList = Utilities.EditorUtilities.CreateReorderableList(
                 serializedObject,
-                targetsProperty,
-                methodNameProperty,
-                "Target:",
-                "The target object",
-                "Method:",
-                "The method name to invoke",
+                columns,
                 "Target-Method Pairs"
             );
+        }
+
+        private void OnEnable(){
+            TryBuildList();
         }
 
         public override void OnInspectorGUI(){
             UdonSharpGUI.DrawDefaultUdonSharpBehaviourHeader(target);
             serializedObject.Update();
 
-            // Draw the reorderable list
-            reorderableList.DoLayoutList();
+            if (reorderableList == null)
+                TryBuildList();
+
+            if (reorderableList != null)
+                reorderableList.DoLayoutList();
 
             serializedObject.ApplyModifiedProperties();
         }
