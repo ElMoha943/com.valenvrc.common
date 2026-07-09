@@ -122,7 +122,7 @@ MonoBehaviour:
       Data: 7|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: valenvrc.Common.GestureType, valenvrc.Common.Runtime
+      Data: valenvrc.Common.GestureType, valenvrc.Common
     - Name: 
       Entry: 8
       Data: 
@@ -188,7 +188,7 @@ MonoBehaviour:
       Data: 12|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: valenvrc.Common.GestureActions, valenvrc.Common.Runtime
+      Data: valenvrc.Common.GestureActions, valenvrc.Common
     - Name: 
       Entry: 8
       Data: 
@@ -248,7 +248,7 @@ MonoBehaviour:
       Data: 16|System.RuntimeType, mscorlib
     - Name: 
       Entry: 1
-      Data: valenvrc.Common.TargetPositions, valenvrc.Common.Runtime
+      Data: valenvrc.Common.TargetPositions, valenvrc.Common
     - Name: 
       Entry: 8
       Data: 

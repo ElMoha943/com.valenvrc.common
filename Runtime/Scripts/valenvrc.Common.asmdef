@@ -1,5 +1,5 @@
 {
-    "name": "valenvrc.Common.Runtime",
+    "name": "valenvrc.Common",
     "rootNamespace": "valenvrc.Common",
     "references": [
         "GUID:99835874ee819da44948776e0df4ff1d",
