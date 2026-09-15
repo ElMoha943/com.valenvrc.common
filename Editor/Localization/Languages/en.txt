@@ -1,0 +1,22 @@
+# Shared editor strings
+common.language	Editor Language
+common.help_hover	Unsure what something does? Hover over any field for more information.
+common.ok	OK
+common.cancel	Cancel
+common.fix	Fix
+common.show	Show
+common.hide	Hide
+common.edit	Edit
+common.settings	Settings
+common.audio	Audio
+common.references	References
+common.export_success	Export Successful
+common.export_failed	Export Failed
+common.import_success	Import Successful
+common.import_failed	Import Failed
+common.close	Close
+common.apply_and_close	Apply and Close
+common.add	Add
+common.delete	Delete
+common.remove	Remove
+common.activate	Activate

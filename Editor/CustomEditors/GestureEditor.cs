@@ -12,10 +12,12 @@ namespace valenvrc.Common.Editor.Custom
         SerializedProperty gestureTypeProperty;
         SerializedProperty gestureActionProperty;
         SerializedProperty targetPositionProperty;
+        SerializedProperty rotationOffsetProperty;
         SerializedProperty RespawnKeyProperty;
         SerializedProperty timesProperty;
         SerializedProperty gracePeriodProperty;
         SerializedProperty progressSlider;
+        SerializedProperty stickThreshold;
 
         SerializedProperty targetObjectProperty;
         SerializedProperty tpointProperty;
@@ -28,10 +30,12 @@ namespace valenvrc.Common.Editor.Custom
             gestureTypeProperty = serializedObj.FindProperty("gestureType");
             gestureActionProperty = serializedObj.FindProperty("gestureAction");
             targetPositionProperty = serializedObj.FindProperty("targetPosition");
+            rotationOffsetProperty = serializedObj.FindProperty("rotationOffset");
             RespawnKeyProperty = serializedObj.FindProperty("RespawnKey");
             timesProperty = serializedObj.FindProperty("times");
             gracePeriodProperty = serializedObj.FindProperty("gracePeriod");
             progressSlider = serializedObj.FindProperty("progressSlider");
+            stickThreshold = serializedObj.FindProperty("stickThreshold");
 
             targetObjectProperty = serializedObj.FindProperty("targetObject");
             tpointProperty = serializedObj.FindProperty("tpoint");
@@ -40,11 +44,10 @@ namespace valenvrc.Common.Editor.Custom
         public override void OnInspectorGUI(){
             UdonSharpGUI.DrawDefaultUdonSharpBehaviourHeader(target);
             serializedObj.Update();
-
-            EditorGUILayout.PropertyField(requireTriggerPressedProperty);
-
             EditorGUILayout.PropertyField(gestureTypeProperty);
             if(gestureTypeProperty.enumValueIndex > 0){ // Respawn Joystick Gesture
+                EditorGUILayout.PropertyField(requireTriggerPressedProperty);
+                EditorGUILayout.PropertyField(stickThreshold);
                 EditorGUILayout.PropertyField(timesProperty);
                 if(gestureTypeProperty.enumValueIndex > 2){ // Times Gesture
                     EditorGUILayout.PropertyField(gracePeriodProperty);
@@ -64,6 +67,7 @@ namespace valenvrc.Common.Editor.Custom
             //Show Position type
             if(gestureActionProperty.enumValueIndex == 1){ // Teleport Object
                 EditorGUILayout.PropertyField(targetPositionProperty);
+                EditorGUILayout.PropertyField(rotationOffsetProperty);
             }
 
             //Show Position

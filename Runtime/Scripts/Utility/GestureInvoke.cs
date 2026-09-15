@@ -13,11 +13,12 @@ namespace valenvrc.Common{
         [SerializeField] GestureType gestureType = GestureType.KeyPress;
         [SerializeField] GestureActions gestureAction = GestureActions.TeleportObject;
         [SerializeField] TargetPositions targetPosition = TargetPositions.Front;
+        [SerializeField] Vector3 rotationOffset;
         [SerializeField] KeyCode RespawnKey = KeyCode.Q;
 
         [SerializeField] float times;
         [SerializeField] float gracePeriod = 0.5f;
-        [SerializeField] float stickThreshold = 0.5f;
+        [SerializeField, Range(0.1f,1.0f)] float stickThreshold = 0.5f;
 
         [SerializeField] GameObject targetObject;
         [SerializeField] GameObject tpoint;
@@ -155,7 +156,7 @@ namespace valenvrc.Common{
             Vector3 targetPos;
             if(targetPosition == TargetPositions.Front){
                 VRCPlayerApi.TrackingData td = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.Head);
-                targetPos = td.position + td.rotation * Vector3.forward * (avatarHeight / 2);
+                targetPos = td.position + td.rotation * Vector3.forward * 0.5f * (avatarHeight / 2);
             }
             else if(targetPosition == TargetPositions.RightHand){
                 targetPos = localPlayer.GetTrackingData(VRCPlayerApi.TrackingDataType.RightHand).position;
@@ -168,6 +169,7 @@ namespace valenvrc.Common{
             }
             targetObject.transform.position = targetPos;
             targetObject.transform.LookAt(localPlayer.GetBonePosition(HumanBodyBones.Head));
+            targetObject.transform.rotation *= Quaternion.Euler(rotationOffset);
         }
 
         void _TeleportSelf(){

@@ -1,16 +1,26 @@
 {
   "name": "com.valenvrc.common",
-  "version": "2.9.2",
+  "version": "2.10.0",
   "description": "A compilation of all my utility scripts for VRChat. Mostly are dependences for my other assets.",
   "displayName": "Valenvrc - Common",
+  "url": "https://jinxxy.com/valenvrc/Commons",
   "author": {
     "name": "valenvrc",
-    "url": "https://discord.gg/6AcpahXKQu"
+    "email": "support@valenvrc.com",
+    "url": "https://valenvrc.com"
   },
+  "documentationUrl": "https://docs.valenvrc.com/category/valencommons",
+  "changelogUrl": "https://docs.valenvrc.com/changelog",
+  "licensesUrl": "https://docs.valenvrc.com/tos",
+  "hideInEditor": false,
   "unity": "2022.3",
   "unityRelease": "22f1",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+  },
   "vpmDependencies": {
-    "com.vrchat.worlds": "^3.10.1"
+    "com.vrchat.worlds": ">=3.10.5",
+    "com.vrchat.base": ">=3.10.5"
   },
   "legacyFiles": {
     "EditorUtilities.cs": "7e69bd3fb0419cc4294bf0b08a6a1fca",
@@ -23,7 +33,10 @@
     "LicenseCryptoUtility.cs": "9e3c662c71d7fb74db9ba299b9febef2",
     "LicensedEditorFrame.cs": "5d848ec5882a5c949acc80fdc4e519ed"
   },
-  "hideInEditor": false,
+  "legacyPackages": [
+    "com.vrchat.clientsim",
+    "com.vrchat.udonsharp"
+  ],
   "keywords": [
     "scripts",
     "udon",

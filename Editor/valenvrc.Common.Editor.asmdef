@@ -2,9 +2,9 @@
     "name": "valenvrc.Common.Editor",
     "rootNamespace": "valenvrc.Common",
     "references": [
-        "GUID:381a228cf0afcd1489b3c9484175fff2",
-        "GUID:84265b35cca3905448e623ef3903f0ff",
-        "GUID:7748881fc6485b141ba9feb8003209fb"
+        "valenvrc.Common",
+        "UdonSharp.Editor",
+        "valenvrc.Common.Editor.Utilities"
     ],
     "includePlatforms": [
         "Editor"

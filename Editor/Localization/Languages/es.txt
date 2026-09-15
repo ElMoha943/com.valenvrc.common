@@ -1,0 +1,22 @@
+# Textos compartidos del editor
+common.language	Idioma del editor
+common.help_hover	¿No sabes qué hace alguna opción? Pasa el cursor sobre cualquier campo para obtener más información.
+common.ok	Aceptar
+common.cancel	Cancelar
+common.fix	Reparar
+common.show	Mostrar
+common.hide	Ocultar
+common.edit	Editar
+common.settings	Configuración
+common.audio	Audio
+common.references	Referencias
+common.export_success	Exportación completada
+common.export_failed	Error de exportación
+common.import_success	Importación completada
+common.import_failed	Error de importación
+common.close	Cerrar
+common.apply_and_close	Aplicar y cerrar
+common.add	Agregar
+common.delete	Eliminar
+common.remove	Quitar
+common.activate	Activar

@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: ButtonCooldown  C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 8e1227224bfdbc74f8e712f626e6e44e,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 0c9946d3fcf43f844bcf47e6a7babd9f, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 76c6b9c246e93e04d97b034572c6d336, type: 3}

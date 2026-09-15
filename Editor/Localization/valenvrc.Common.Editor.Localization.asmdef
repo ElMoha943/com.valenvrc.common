@@ -1,0 +1,26 @@
+{
+    "name": "valenvrc.Common.Editor.Localization",
+    "rootNamespace": "valenvrc.Common.Editor",
+    "references": [
+        "UdonSharp.Editor",
+        "valenvrc.Common",
+        "VRC.SDK3.Editor",
+        "VRC.SDKBase",
+        "VRC.SDKBase.Editor.BuildPipeline",
+        "VRC.SDKBase.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "VRCCore-Editor.dll",
+        "VRCSDKBase.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

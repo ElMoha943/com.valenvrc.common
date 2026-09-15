@@ -152,13 +152,7 @@ namespace valenvrc.Common.Editor.Utilities
             new Color(0.52f, 0.52f, 0.52f),
         };
 
-        private static readonly Color[] _accentColors =
-        {
-            new Color(0.24f, 0.59f, 0.88f),
-            new Color(0.24f, 0.82f, 0.55f),
-            new Color(0.94f, 0.73f, 0.24f),
-            new Color(0.88f, 0.40f, 0.24f),
-        };
+        private static readonly Color32 accent = new Color32(232, 136, 63, 255);
 
         private static GUIStyle _sectionHeaderStyle;
         private static GUIStyle _sectionArrowStyle;
@@ -188,7 +182,6 @@ namespace valenvrc.Common.Editor.Utilities
 
             int depth = Mathf.Clamp(_sectionDepth, 0, 3);
             Color headerBg = EditorGUIUtility.isProSkin ? _headerColorsDark[depth] : _headerColorsLight[depth];
-            Color accent = _accentColors[depth % _accentColors.Length];
             Color textColor = EditorGUIUtility.isProSkin ? new Color(0.9f, 0.9f, 0.9f) : Color.black;
 
             _sectionHeaderStyle.normal.textColor = textColor;
@@ -237,7 +230,6 @@ namespace valenvrc.Common.Editor.Utilities
             EditorGUILayout.Space(1f);
         }
 
-        
     }
 
 }

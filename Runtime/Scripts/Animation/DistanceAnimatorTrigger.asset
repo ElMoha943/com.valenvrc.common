@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: DistanceAnimatorTrigger
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: cda1ad7157597914f91a1ca17cca3e5f,
-    type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 06637acd332aedb4c8f04f75459ce6a5, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: 34b0b60c277bb744c873a213deb76be4, type: 3}
