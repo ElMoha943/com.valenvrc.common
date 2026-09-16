@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: FallRecover
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 361c91f8e39d0ca48914ddbe8636d765, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 9ff28a8d3196e58468572b1c60402509, type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: b6390d0117dbb2144a1347100154223f, type: 3}
