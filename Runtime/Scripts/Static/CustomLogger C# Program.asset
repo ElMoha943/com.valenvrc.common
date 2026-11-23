@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: CustomLogger C# Program
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 3335415778584644eb2a5a488ddffd2d, type: 2}
+  serializedUdonProgramAsset: {fileID: 11400000, guid: e8be4aa4b101da34fa2c4e1bc1e7cfbb,
+    type: 2}
   udonAssembly: 
   assemblyError: 
   sourceCsScript: {fileID: 11500000, guid: c96617fb4343667459802b945f9f1b80, type: 3}

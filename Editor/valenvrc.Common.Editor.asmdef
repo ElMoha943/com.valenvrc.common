@@ -4,6 +4,7 @@
     "references": [
         "valenvrc.Common",
         "UdonSharp.Editor",
+        "UdonSharp.Runtime",
         "valenvrc.Common.Editor.Utilities"
     ],
     "includePlatforms": [
